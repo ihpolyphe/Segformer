@@ -1,4 +1,4 @@
-FROM nvidia/cuda:10.2-cudnn7-devel-ubuntu18.04
+FROM nvidia/cuda:10.2-cudnn8-devel-ubuntu18.04
 # apt-get update や apt-get upgrade の前にNO_PUBLIC_KEY対策
 RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
 RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
@@ -42,6 +42,6 @@ COPY segformer.py  /home/user
 COPY segformer_inference.py  /home/user
 COPY encode_decode_test.py  /home/user
 COPY train_masks.csv  /home/user
-COPY split_data/  /home/user/split_data
+# COPY split_data/  /home/user/split_data
 COPY split_data_small/  /home/user/split_data_small
 COPY checkpoint/  /home/user/checkpoint
